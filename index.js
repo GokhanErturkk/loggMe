@@ -9,7 +9,9 @@ loggMe.setContext(
 
 console.log(loggMe.getLogLevel())
 
-loggMe.debug("debug....")
+
 loggMe.warn('warn.....')
+
+
 
 
