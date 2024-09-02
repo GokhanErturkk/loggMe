@@ -1,6 +1,7 @@
+require('dotenv').config();
 const loggMe = require('./lib/loggMe');
 
 console.log(loggMe)
 
-loggMe.setLogLevel("DEBUG")
+// loggMe.setLogLevel("DEBUG")
 console.log(loggMe.getLogLevel())
