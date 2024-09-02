@@ -1,10 +1,16 @@
 require('dotenv').config();
 const loggMe = require('./lib/loggMe');
+const hostname = require('os').hostname();
 
-// console.log(loggMe)
+loggMe.setContext(
+    { hostname, pid: process.pid }
+)
 
-// loggMe.setLogLevel("DEBUG")
+
 console.log(loggMe.getLogLevel())
 
 loggMe.debug("debug....")
 loggMe.warn('warn.....')
+
+
+console.log(loggMe.context)
