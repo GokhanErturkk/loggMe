@@ -13,4 +13,3 @@ loggMe.debug("debug....")
 loggMe.warn('warn.....')
 
 
-console.log(loggMe.context)
