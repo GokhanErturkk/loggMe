@@ -46,11 +46,10 @@ const serializeError = (error, includeStack) => {
         message,
         constructor,
     }
-
-    if (includeStack){
-        errorDetailsObject["stack"] = getErrorStack(error);
-    }
-    return errorDetailsObject
+    
+    return JSON.stringify(errorDetailsObject) +  (includeStack? '\n'+ getErrorStack(error): '')
 }
 
 console.log(serializeError(error,true))
+
+// console.log(JSON.stringify(serializeError(error,true)))
