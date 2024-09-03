@@ -7,11 +7,11 @@ loggMe.setContext(
 )
 
 
-console.log(loggMe.getLogLevel())
+// console.log(loggMe.getLogLevel())
 
 
 // loggMe.error(new Error("Something unexpected happened."))  // first
-// loggMe.warn('Warning message.')     // second
+loggMe.warn('Warning message.')     // second
 // loggMe.warn({key1:"val1"}, "warning message") // third
 
 
