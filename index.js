@@ -11,6 +11,7 @@ loggMe.setContext(
 
 
 loggMe.error(new Error("Something unexpected happened."))  // first
+// loggMe.error(new Error("Something unexpected happened."))  // first
 //  loggMe.warn('Warning message.')     // second
 // loggMe.warn({key1:"val1"}, "warning message") // third
 
