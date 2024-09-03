@@ -39,17 +39,18 @@ const getEnumerableProperties = (error) => {
 const serializeError = (error, includeStack) => {
     var message = getErrorMessage(error);
     var constructor = getErrorConstructor(error);
-    var stack = getErrorStack(error);
     var enumerables = getEnumerableProperties(error)
 
     var errorDetailsObject = {
         ...enumerables,
         message,
         constructor,
-        stack
     }
 
+    if (includeStack){
+        errorDetailsObject["stack"] = getErrorStack(error);
+    }
     return errorDetailsObject
 }
 
-console.log(serializeError(error))
+console.log(serializeError(error,true))
