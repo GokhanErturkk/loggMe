@@ -24,4 +24,4 @@ npm install loggme
 # Centralized Logging 
 
 
-<img src="./assets/loggMe_centralized_logging.png" alt="image" width="50%" height="50%">
+<img src="./assets/loggMe_centralized_logging.png" alt="image">
