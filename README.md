@@ -123,10 +123,46 @@ loggMe.debug('Log this debug message.')
 
 To experiment all possible variations see `examples/3_setLogLevel.js`.
 ## TimeFormat
+By default IsoString time format is applied.
+
+`Possible Time Formats`
+- ['IsoString', 'unixTimestamp']
+
+```js
+const loggMe = require('loggMe');
+
+/**
+ * set timeFormat to isoString
+ */
+loggMe.setTimeFormat(("IsoString"))
+loggMe.debug('Log this debug message.')
+// Output: {.... , "time":"2024-09-04T14:10:42.277Z"}
+
+/**
+ * set timeFormat to unixTimestamp
+ */
+loggMe.setTimeFormat(("unixTimestamp"))
+loggMe.info('Log this info message.')
+// Output: {....., "time":1725459042277}
+```
 
 To experiment all possible variations see `examples/4_set_time_format.js`.
 ## FileStream
+Give the path of the file as an argument to createFileStream.
 
+```js
+const loggMe = require('loggMe');
+
+/**
+ * Create a json logging stream to a file. 
+ * Colorful dev format does not look good on a file.
+ */
+loggMe.createFileStream('./logs.txt')
+    .setLogFormat('json')
+
+loggMe.info('Log this info message.')
+loggMe.fatal(new Error("Something unexpected happened."))
+```
 To experiment all possible variations see `examples/5_create_file_stream.js`.
 
 
