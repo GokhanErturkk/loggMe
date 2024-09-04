@@ -23,5 +23,6 @@ npm install loggme
 
 # Centralized Logging 
 
+`todo` : A video tutorial will be added about this part.
 
 <img src="./assets/loggMe_centralized_logging.png" alt="image">
