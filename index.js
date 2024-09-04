@@ -6,7 +6,6 @@ loggMe.setContext(
     { hostname, pid: process.pid }
 )
 
-loggMe.setContext()
 
 // console.log(loggMe.getLogLevel())
 
