@@ -9,7 +9,9 @@ LoggMe is a Fool-proof json logging utility for Node.js with colored output, fil
 - [Installation](#installation)
 - [Features](#Features)
 - [Centralized Logging](#centralized-logging)
-
+- [Usage](#usage)
+  * [No Configuration](#no-configuration)
+    + [Default Configurations](#default-configurations)  
 # Installation
 
 ```bash
@@ -21,6 +23,60 @@ npm install loggme
 * Stdout stream, file-logging, Kafka Broker logging support.
 * Easy-to-follow Centralized Log Support For Node Microservices.
 
+# Usage
+In a very basic setup, import the logging library, and call the debug method.
+
+```js
+const loggMe = require('loggMe');
+loggMe.debug('Hi. You just logged this message in debug level.')
+```
+
+`Output`
+
+```sh
+DEBUG
+{"level":"DEBUG","msg":"Hi. You just logged this message in debug level.","time":"2024-09-04T21:55:47.310Z"}
+```
+
+
+## No Configuration
+When no configuration is made, the default ones are used.
+
+### Default Configurations
+ - logLevel = 'DEBUG'
+ - timeFormat = 'IsoString'
+ - logFormat = 'formatters.dev'
+ - stream =  createConsoleStream()
+
+```js
+const loggMe = require('loggMe');
+
+/**
+ * Log only string
+ * 
+ * syntax;
+ * loggMe.<debug|info|warn|error|fatal>(string_Message)
+ */
+loggMe.debug('Log this debug message.')
+
+/**
+ * Log json fields with message
+ *
+ * syntax;
+ * loggMe.<debug|info|warn|error|fatal>({jsonObj}, string_Message)
+ */
+loggMe.debug({field1:"value1"},'Log this debug message.')
+
+/**
+ * Log errors
+ *
+ * syntax;
+ * loggMe.<debug|info|warn|error|fatal>(error_Object)
+ */
+loggMe.debug(new Error("Something unexpected happened."))
+```
+
+To experiment all possible variations see `examples/1_no_configuration.js`.
 # Centralized Logging 
 
 `todo` : A video tutorial will be added about this part.
