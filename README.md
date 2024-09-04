@@ -97,8 +97,29 @@ Debug,info and warn can still be used, but does no operation.
 `Operational levels after logLevel set to error;`
 - ['~~DEBUG~~', '~~INFO~~', '~~WARN~~', 'ERROR', 'FATAL']
 
+```js
+const loggMe = require('loggMe');
+loggMe.setLogLevel('ERROR');
+
+loggMe.debug({field1:"value1"},'Log this debug message.')  //  no operation (DEBUG index < ERROR index)
+loggMe.fatal({field1:"value1"},'Log this fatal message.')  // logged in console (FATAL index  = ERROR index)
+```
+
 To experiment all possible variations see `examples/2_set_logLevel.js`.
 ## LogFormat
+`Possible Log Formats`
+- ['dev', 'json']
+
+By default `dev` logFormat is applied. Provides a colorful console output having a logLevel prefix.
+
+To use File-Stream of Kafka-Stream set logFormat to json.
+
+```js
+const loggMe = require('loggMe');
+
+loggMe.setLogFormat('json')      // Option 1
+loggMe.debug('Log this debug message.')
+```
 
 To experiment all possible variations see `examples/3_setLogLevel.js`.
 ## TimeFormat
