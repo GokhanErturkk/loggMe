@@ -11,7 +11,11 @@ LoggMe is a Fool-proof json logging utility for Node.js with colored output, fil
 - [Centralized Logging](#centralized-logging)
 - [Usage](#usage)
   * [No Configuration](#no-configuration)
-    + [Default Configurations](#default-configurations)  
+    + [Default Configurations](#default-configurations)
+  * [LogLevel](#logLevel)
+  * [LogFormat](#logFormat)
+  * [TimeFormat](#timeFormat)
+  * [FileStream](#fileStream)
 # Installation
 
 ```bash
@@ -77,6 +81,34 @@ loggMe.debug(new Error("Something unexpected happened."))
 ```
 
 To experiment all possible variations see `examples/1_no_configuration.js`.
+
+## LogLevel
+In production, only log selected logLevel and above.
+
+`Example;`
+
+If logLevel is set to ERROR in production, only `loggMe.error`  and `loggMe.fatal` commands work.
+
+Debug,info and warn can still be used, but does no operation.
+
+`Possible Log levels;`
+- ['DEBUG', 'INFO', 'WARN', 'ERROR', 'FATAL']
+
+`Operational levels after logLevel set to error;`
+- ['~~DEBUG~~', '~~INFO~~', '~~WARN~~', 'ERROR', 'FATAL']
+
+To experiment all possible variations see `examples/2_set_logLevel.js`.
+## LogFormat
+
+To experiment all possible variations see `examples/3_setLogLevel.js`.
+## TimeFormat
+
+To experiment all possible variations see `examples/4_set_time_format.js`.
+## FileStream
+
+To experiment all possible variations see `examples/5_create_file_stream.js`.
+
+
 # Centralized Logging 
 
 `todo` : A video tutorial will be added about this part.
