@@ -22,3 +22,7 @@ class KafkaLogger {
     };
 }
 
+
+const kafkaLogger =  new KafkaLogger([process.env.KAFKA_HOST], "clientid")
+
+kafkaLogger.write(JSON.stringify({key99:"val99"}))
