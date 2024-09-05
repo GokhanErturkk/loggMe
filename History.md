@@ -1,8 +1,11 @@
 Next 
 ==================
-* Working examples will be added under /examples.
 * Kafka Broker support will be added.
 * 
+
+0.0.1 / 2024-09-05
+==================
+* Working examples added under /examples.
 
 0.0.1 / 2024-09-04
 ==================
