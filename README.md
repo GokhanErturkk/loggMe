@@ -16,6 +16,7 @@ LoggMe is a Fool-proof json logging utility for Node.js with colored output, fil
   * [LogFormat](#logFormat)
   * [TimeFormat](#timeFormat)
   * [FileStream](#fileStream)
+  * [KafkaStream](#kafkaStream)
 # Installation
 
 ```bash
@@ -164,6 +165,10 @@ loggMe.info('Log this info message.')
 loggMe.fatal(new Error("Something unexpected happened."))
 ```
 To experiment all possible variations see `examples/5_create_file_stream.js`.
+
+## KafkaStream
+Although loggMe uses kafkajs library for Kafka Streaming this decision is based primarily on the fact that  as of now, Node.js does not have an official Kafka client library. Confluent team's 
+[KafkaClient](https://github.com/confluentinc/confluent-kafka-javascript) is still in early access development release stage. As soon as it is ready [confluent-kafka-javascript](https://github.com/confluentinc/confluent-kafka-javascript) will be used for later versions of the [loggMe](https://github.com/GokhanErturkk/loggMe).
 
 
 # Centralized Logging 

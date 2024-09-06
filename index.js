@@ -2,11 +2,12 @@ require('dotenv').config();
 const loggMe = require('./lib/loggMe');
 const hostname = require('os').hostname();
 
-loggMe.setContext(
-    { hostname, pid: process.pid }
-)
+// loggMe.setContext(
+//     { hostname, pid: process.pid }
+// )
 
-
+loggMe.createKafkaStream([process.env.KAFKA_HOST], "clientid")
+    .setLogFormat('json') 
 // console.log(loggMe.getLogLevel())
 
 
