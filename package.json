@@ -2,12 +2,20 @@
   "name": "loggme",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+
+  "author": "Gökhan Ertürk <gkn2654@gmail.com>",
+  "contributors": [
+    "Cem Bağlum <cembglm@gmail.com>"
+  ],
+  "main": "./lib/loggMe.js",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/GokhanErturkk/loggMe"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
-  "author": "",
   "license": "ISC",
   "dependencies": {
     "chalk": "^4.1.2",
