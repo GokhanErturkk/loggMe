@@ -32,7 +32,7 @@ npm install loggme
 In a very basic setup, import the logging library, and call the debug method.
 
 ```js
-const loggMe = require('loggMe');
+const loggMe = require('loggme');
 loggMe.debug('Hi. You just logged this message in debug level.')
 ```
 
@@ -54,7 +54,7 @@ When no configuration is made, the default ones are used.
  - stream =  createConsoleStream()
 
 ```js
-const loggMe = require('loggMe');
+const loggMe = require('loggme');
 
 /**
  * Log only string
@@ -99,7 +99,7 @@ Debug,info and warn can still be used, but does no operation.
 - ['~~DEBUG~~', '~~INFO~~', '~~WARN~~', 'ERROR', 'FATAL']
 
 ```js
-const loggMe = require('loggMe');
+const loggMe = require('loggme');
 loggMe.setLogLevel('ERROR');
 
 loggMe.debug({field1:"value1"},'Log this debug message.')  //  no operation (DEBUG index < ERROR index)
@@ -116,7 +116,7 @@ By default `dev` logFormat is applied. Provides a colorful console output having
 To use File-Stream of Kafka-Stream set logFormat to json.
 
 ```js
-const loggMe = require('loggMe');
+const loggMe = require('loggme');
 
 loggMe.setLogFormat('json')      // Option 1
 loggMe.debug('Log this debug message.')
@@ -130,7 +130,7 @@ By default IsoString time format is applied.
 - ['IsoString', 'unixTimestamp']
 
 ```js
-const loggMe = require('loggMe');
+const loggMe = require('loggme');
 
 /**
  * set timeFormat to isoString
@@ -152,7 +152,7 @@ To experiment all possible variations see `examples/4_set_time_format.js`.
 Give the path of the file as an argument to createFileStream.
 
 ```js
-const loggMe = require('loggMe');
+const loggMe = require('loggme');
 
 /**
  * Create a json logging stream to a file. 
@@ -172,7 +172,7 @@ Although loggMe uses kafkajs library for Kafka Streaming this decision is based 
 
 Define broker addresses in an array, broker-topic and optionally the clientid. Then set logFormat to json as below.
 ```js
-const loggMe = require('loggMe');
+const loggMe = require('loggme');
 
 // create a kafka stream
 loggMe.createKafkaStream(['localhost:9092'], 'your-kafka-topic',  "clientid")
