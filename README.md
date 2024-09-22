@@ -170,9 +170,18 @@ To experiment all possible variations see `examples/5_create_file_stream.js`.
 Although loggMe uses kafkajs library for Kafka Streaming this decision is based primarily on the fact that  as of now, Node.js does not have an official Kafka client library. Confluent team's 
 [KafkaClient](https://github.com/confluentinc/confluent-kafka-javascript) is still in early access development release stage. As soon as it is ready [confluent-kafka-javascript](https://github.com/confluentinc/confluent-kafka-javascript) will be used for later versions of the [loggMe](https://github.com/GokhanErturkk/loggMe).
 
+Define broker addresses in an array, broker-topic and optionally the clientid. Then set logFormat to json as below.
+```js
+const loggMe = require('loggMe');
+
+// create a kafka stream
+loggMe.createKafkaStream(['localhost:9092'], 'your-kafka-topic',  "clientid")
+    .setLogFormat('json') 
+
+loggMe.debug('Log this debug message.')
+```
+To experiment all possible variations see `examples/6_create_kafka_stream.js`.
 
 # Centralized Logging 
-
-`todo` : A video tutorial will be added about this part.
-
+In a microservices architecture it is advised to aggregate the logs from microservices and store than in a single location. Since `LoggMe` supports Kafka logging, you can produce all your microservice logs to kafka and collect these logs in your centralized ELK. This way you can monitor all your node microservices in a centralized manner.
 <img src="./assets/loggMe_centralized_logging.png" alt="image">

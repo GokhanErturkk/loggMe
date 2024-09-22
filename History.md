@@ -1,11 +1,14 @@
 Next 
 ==================
-* Kafka Broker examples will be added under /examples.
 * Tests should be started to allow future contributors.
 * Video introduction is needed.
 
+0.0.1 / 2024-09-22
+==================
+* Kafka Broker example is added under /examples.
 0.0.1 / 2024-09-05
 ==================
+* Kafka Broker example is added under /examples.
 * Kafka Broker support is added.
 * Working examples added under /examples.
 

@@ -4,5 +4,5 @@ https://www.confluent.io/blog/getting-started-with-kafkajs/
 
 
 ```sh
-docker exec --interactive --tty broker_macbkear  kafka-console-consumer --bootstrap-server broker:9092  --topic mail  --from-beginning --property print.key=true --property print.headers=true --property print.timestamp=true
+docker exec --interactive --tty broker_name  kafka-console-consumer --bootstrap-server broker:9092  --topic mail  --from-beginning --property print.key=true --property print.headers=true --property print.timestamp=true
 ```
